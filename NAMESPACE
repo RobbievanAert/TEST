@@ -2,3 +2,4 @@ useDynLib(TEST, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
 
 export(rcpp_hello_world)
+export(puniform)
