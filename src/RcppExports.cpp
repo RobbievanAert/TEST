@@ -5,6 +5,21 @@
 
 using namespace Rcpp;
 
+// ml_est
+double ml_est(double est, double tau, NumericVector yi, NumericVector vi, NumericVector ycv);
+RcppExport SEXP _TEST_ml_est(SEXP estSEXP, SEXP tauSEXP, SEXP yiSEXP, SEXP viSEXP, SEXP ycvSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type est(estSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type yi(yiSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type vi(viSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type ycv(ycvSEXP);
+    rcpp_result_gen = Rcpp::wrap(ml_est(est, tau, yi, vi, ycv));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _TEST_rcpp_hello_world() {
@@ -17,6 +32,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_TEST_ml_est", (DL_FUNC) &_TEST_ml_est, 5},
     {"_TEST_rcpp_hello_world", (DL_FUNC) &_TEST_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };
