@@ -5,6 +5,22 @@ ml_est <- function(est, tau, yi, vi, ycv) {
     .Call(`_TEST_ml_est`, est, tau, yi, vi, ycv)
 }
 
+ml_tau <- function(tau, d, yi, vi, ycv) {
+    .Call(`_TEST_ml_tau`, tau, d, yi, vi, ycv)
+}
+
+approx_C <- function(yi, tot_var, ycv, est) {
+    .Call(`_TEST_approx_C`, yi, tot_var, ycv, est)
+}
+
+pdist_nsig <- function(est, tau, yi, vi, param, ycv, method, val, cv_P) {
+    .Call(`_TEST_pdist_nsig`, est, tau, yi, vi, param, ycv, method, val, cv_P)
+}
+
+trq <- function(est, tau, yi, vi, ycv) {
+    .Call(`_TEST_trq`, est, tau, yi, vi, ycv)
+}
+
 rcpp_hello_world <- function() {
     .Call(`_TEST_rcpp_hello_world`)
 }
